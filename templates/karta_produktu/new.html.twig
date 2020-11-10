@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New KartaProduktu{% endblock %}
+
+{% block body %}
+    <h1>Create new KartaProduktu</h1>
+
+    {{ include('karta_produktu/_form.html.twig') }}
+
+    <a href="{{ path('karta_produktu_index') }}">back to list</a>
+{% endblock %}

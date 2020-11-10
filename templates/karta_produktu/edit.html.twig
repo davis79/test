@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit KartaProduktu{% endblock %}
+
+{% block body %}
+    <h1>Edit KartaProduktu</h1>
+
+    {{ include('karta_produktu/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('karta_produktu_index') }}">back to list</a>
+
+    {{ include('karta_produktu/_delete_form.html.twig') }}
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}KartaProduktu index{% endblock %}
+
+{% block body %}
+    {% include 'nav.html.twig' %}
+    <h1>KartaProduktu index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>NazwaProduktu</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for karta_produktu in karta_produktus %}
+            <tr>
+                <td>{{ karta_produktu.id }}</td>
+                <td>{{ karta_produktu.nazwaProduktu }}</td>
+                <td>
+                    <a href="{{ path('karta_produktu_show', {'id': karta_produktu.id}) }}">show</a>
+                    <a href="{{ path('karta_produktu_edit', {'id': karta_produktu.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('karta_produktu_new') }}">Create new</a>
+{% endblock %}
